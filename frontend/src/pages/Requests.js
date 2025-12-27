@@ -1,7 +1,7 @@
 // src/pages/Requests.js
 import React from "react";
-import RequestCard from "../components/RequestCard";
 import { useNavigate } from "react-router-dom";
+import RequestCard from "../components/RequestCard";
 
 const Requests = () => {
     const navigate = useNavigate();
@@ -81,7 +81,6 @@ const Requests = () => {
                 >
                     + New Request
                 </button>
-
             </div>
 
             {/* Kanban columns */}
@@ -106,7 +105,13 @@ const Requests = () => {
                                     style={{ backgroundColor: "#f9fafb" }}
                                 >
                                     {items.map((r) => (
-                                        <RequestCard key={r.id} req={r} />
+                                        <div
+                                            key={r.id}
+                                            onClick={() => navigate(`/requests/${r.id}`)}
+                                            style={{ cursor: "pointer" }}
+                                        >
+                                            <RequestCard req={r} />
+                                        </div>
                                     ))}
 
                                     {items.length === 0 && (

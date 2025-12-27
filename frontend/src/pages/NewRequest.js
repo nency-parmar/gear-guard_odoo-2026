@@ -1,9 +1,14 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import RequestForm from "../components/RequestForm";
 
 const NewRequest = () => {
+    const navigate = useNavigate();
+
     const handleSubmit = (data) => {
         console.log("Submit to API:", data);
-        // later: call backend, then navigate back to /requests
+        // TODO: call backend here
+        navigate("/requests");
     };
 
     return (
@@ -11,7 +16,10 @@ const NewRequest = () => {
             <h1 className="h3 mb-3" style={{ color: "#0f172a" }}>
                 Create Maintenance Request
             </h1>
-            <RequestForm onSubmit={handleSubmit} />
+            <RequestForm
+                onSubmit={handleSubmit}
+                onCancel={() => navigate("/requests")}
+            />
         </div>
     );
 };

@@ -1,5 +1,10 @@
 // src/pages/Teams.js
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
 const Teams = () => {
+    const navigate = useNavigate();
+
     const teams = [
         {
             id: "TEAM-01",
@@ -7,7 +12,7 @@ const Teams = () => {
             members: ["Ankit", "Ravi", "Pooja"],
             openRequests: 5,
             specialty: "CNC machines, forklifts, pumps",
-            color: "#1d4ed8", // navy-blue accent
+            color: "#1d4ed8",
         },
         {
             id: "TEAM-02",
@@ -60,6 +65,7 @@ const Teams = () => {
                         color: "white",
                         borderColor: "#1d4ed8",
                     }}
+                    onClick={() => navigate("/teams/new")}
                 >
                     + Create Team
                 </button>
@@ -121,7 +127,11 @@ const Teams = () => {
             <div className="row g-3">
                 {teams.map((team) => (
                     <div className="col-md-6" key={team.id}>
-                        <div className="card border-0 shadow-sm h-100">
+                        <div
+                            className="card border-0 shadow-sm h-100"
+                            style={{ cursor: "pointer" }}
+                            onClick={() => navigate(`/teams/${team.id}`)}
+                        >
                             <div className="card-body">
                                 <div className="d-flex justify-content-between align-items-start mb-2">
                                     <div>
@@ -141,9 +151,7 @@ const Teams = () => {
                                     </span>
                                 </div>
 
-                                <p className="small text-muted mb-2">
-                                    {team.specialty}
-                                </p>
+                                <p className="small text-muted mb-2">{team.specialty}</p>
 
                                 {/* Members list */}
                                 <ul className="list-group list-group-flush small mb-3">
@@ -179,12 +187,20 @@ const Teams = () => {
                                     <button
                                         type="button"
                                         className="btn btn-sm btn-outline-primary"
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            navigate(`/teams/${team.id}`);
+                                        }}
                                     >
                                         View team load
                                     </button>
                                     <button
                                         type="button"
                                         className="btn btn-sm btn-outline-secondary"
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            navigate(`/teams/${team.id}`); // later: /teams/:id/edit
+                                        }}
                                     >
                                         Edit team
                                     </button>
