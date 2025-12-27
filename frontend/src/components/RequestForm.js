@@ -121,7 +121,7 @@ const RequestForm = ({ onSubmit, onCancel }) => {
                     </select>
                 </div>
 
-                {/* Scheduled Date (for Preventive) */}
+                {/* Scheduled Date */}
                 <div className="mb-3 col-md-4">
                     <label className="form-label">Scheduled Date</label>
                     <input
