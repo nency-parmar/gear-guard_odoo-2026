@@ -1,0 +1,20 @@
+const mongoose = require("mongoose");
+
+const maintenanceTeamSchema = new mongoose.Schema(
+  {
+    teamName: {
+      type: String,
+      required: true,
+      unique: true
+    },
+    members: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+      }
+    ]
+  },
+  { timestamps: true }
+);
+
+module.exports = mongoose.model("MaintenanceTeam", maintenanceTeamSchema);
