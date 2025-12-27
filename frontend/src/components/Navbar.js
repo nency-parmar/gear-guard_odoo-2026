@@ -1,12 +1,42 @@
+// src/components/Navbar.js
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return (
-        <nav style={{ padding: "10px", background: "#1e293b" }}>
-            <Link to="/" style={{ color: "white", marginRight: "15px" }}>Dashboard</Link>
-            <Link to="/equipment" style={{ color: "white", marginRight: "15px" }}>Equipment</Link>
-            <Link to="/requests" style={{ color: "white", marginRight: "15px" }}>Requests</Link>
-            <Link to="/teams" style={{ color: "white" }}>Teams</Link>
+        <nav
+            className="navbar navbar-dark shadow-sm"
+            style={{ backgroundColor: "#1e293b" }}
+        >
+            <div className="container-fluid">
+                <span className="navbar-brand mb-0 h1">
+                    <span
+                        style={{
+                            display: "inline-block",
+                            width: 10,
+                            height: 10,
+                            borderRadius: "50%",
+                            backgroundColor: "#facc15", // yellow dot
+                            marginRight: 8,
+                        }}
+                    />
+                    GearGuard
+                </span>
+
+                <div className="d-flex gap-3">
+                    <Link to="/" className="nav-link text-light">
+                        Dashboard
+                    </Link>
+                    <Link to="/equipment" className="nav-link text-light">
+                        Equipment
+                    </Link>
+                    <Link to="/requests" className="nav-link text-light">
+                        Requests
+                    </Link>
+                    <Link to="/teams" className="nav-link text-light">
+                        Teams
+                    </Link>
+                </div>
+            </div>
         </nav>
     );
 };
