@@ -1,8 +1,10 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
 import Dashboard from "./pages/Dashboard";
 import Equipment from "./pages/Equipment";
+import EquipmentDetail from "./pages/EquipmentDetail";
 import Requests from "./pages/Requests";
+import TeamDetail from "./pages/TeamDetail";
 import Teams from "./pages/Teams";
 
 function App() {
@@ -12,8 +14,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/equipment" element={<Equipment />} />
+          <Route path="/equipment/:id" element={<EquipmentDetail />} />
           <Route path="/requests" element={<Requests />} />
           <Route path="/teams" element={<Teams />} />
+          <Route path="/teams/:id" element={<TeamDetail />} />
         </Routes>
       </MainLayout>
     </BrowserRouter>
