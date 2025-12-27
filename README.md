@@ -52,9 +52,9 @@ GearGuard/
 ---
 
 ## 👥 Team Contributions
-- **Backend Development:** Tejasvi Shekhat  
+- **Backend Development:** Khushboo Lo  
 - **Frontend Development:** Nency Parmar  
-- **Project Management & Integration:** Khushboo Lo  
+- **Project Management & Integration:**   Tejasvi Shekhat
 
 ---
 
