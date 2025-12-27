@@ -1,5 +1,6 @@
 // src/pages/TeamDetail.js
-import { useNavigate, useParams } from "react-router-dom";
+import React from "react";
+import { useParams, useNavigate } from "react-router-dom";
 
 const MOCK_TEAMS = [
     {

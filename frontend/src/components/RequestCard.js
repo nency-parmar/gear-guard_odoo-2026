@@ -1,4 +1,3 @@
-// src/components/RequestCard.js
 import React from "react";
 
 const getStatusBadgeClass = (status) => {

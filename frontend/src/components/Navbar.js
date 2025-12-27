@@ -15,7 +15,7 @@ const Navbar = () => {
                             width: 10,
                             height: 10,
                             borderRadius: "50%",
-                            backgroundColor: "#facc15",
+                            backgroundColor: "#facc15", // yellow dot
                             marginRight: 8,
                         }}
                     />

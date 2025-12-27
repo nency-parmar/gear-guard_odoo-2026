@@ -1,5 +1,5 @@
 // src/pages/EquipmentDetail.js
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 // Temporary mock data – later replace with API call
 const MOCK_EQUIPMENT = [

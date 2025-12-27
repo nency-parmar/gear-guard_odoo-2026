@@ -1,8 +1,11 @@
 // src/pages/Requests.js
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import RequestCard from "../components/RequestCard";
 
 const Requests = () => {
+    const navigate = useNavigate();
+
     const requests = [
         {
             id: "REQ-1042",
@@ -74,6 +77,7 @@ const Requests = () => {
                         color: "#1e293b",
                         borderColor: "#eab308",
                     }}
+                    onClick={() => navigate("/requests/new")}
                 >
                     + New Request
                 </button>
@@ -101,7 +105,13 @@ const Requests = () => {
                                     style={{ backgroundColor: "#f9fafb" }}
                                 >
                                     {items.map((r) => (
-                                        <RequestCard key={r.id} req={r} />
+                                        <div
+                                            key={r.id}
+                                            onClick={() => navigate(`/requests/${r.id}`)}
+                                            style={{ cursor: "pointer" }}
+                                        >
+                                            <RequestCard req={r} />
+                                        </div>
                                     ))}
 
                                     {items.length === 0 && (
