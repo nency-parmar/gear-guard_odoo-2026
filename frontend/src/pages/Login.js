@@ -1,9 +1,12 @@
 // src/pages/Login.js
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const Login = () => {
     const navigate = useNavigate();
+    const { loginAsAdmin, loginAsUser } = useAuth();
+
     const [form, setForm] = useState({ email: "", password: "" });
     const [error, setError] = useState("");
 
@@ -18,16 +21,17 @@ const Login = () => {
 
         const { email, password } = form;
 
-        // super simple demo logic
+        // Admin demo
         if (email === "admin@gearguard.com" && password === "admin123") {
-            // admin login -> main dashboard
-            navigate("/");
+            loginAsAdmin(email);
+            navigate("/"); // admin dashboard (with navbar)
             return;
         }
 
-        // any other non-empty email/password -> treat as normal user for now
+        // Any other non-empty -> normal user
         if (email && password) {
-            navigate("/portal"); // user dashboard
+            loginAsUser(email);
+            navigate("/portal"); // user dashboard (no navbar)
             return;
         }
 
