@@ -66,14 +66,3 @@ cd backend
 npm install
 npm run dev
 
-
-### Backend
-```bash
-cd frontend
-npm install
-npm start
-
-
-🏁 Summary
-GearGuard delivers a scalable, modular, and industry-aligned maintenance management solution using the MERN stack. By integrating structured workflows, role-based access, and visual management tools, the system demonstrates practical full-stack engineering suitable for real-world enterprise applications.
-
